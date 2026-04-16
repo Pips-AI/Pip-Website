@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Pips AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080c14;
+      --surface: #0d1322;
+      --border: #1e2a3a;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --accent: #16a34a;
+      --accent-light: #22c55e;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 12, 20, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      height: 56px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .pip-dot {
+      width: 22px; height: 22px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: #fff;
+    }
+    .nav-back {
+      margin-left: auto;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    .page-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .page-header .meta {
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #fff;
+      margin: 2rem 0 0.75rem;
+    }
+
+    p { margin-bottom: 1rem; color: var(--text); }
+
+    ul {
+      margin: 0.5rem 0 1rem 1.25rem;
+      color: var(--text);
+    }
+    ul li { margin-bottom: 0.4rem; }
+
+    a { color: var(--accent-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .highlight-box p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.5rem;
+      font-size: 0.875rem;
+    }
+    .data-table th {
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    .data-table td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .data-table tr:nth-child(even) td {
+      background: rgba(255,255,255,0.02);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.15em 0.5em;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-local { background: rgba(22,163,74,0.15); color: #4ade80; }
+    .badge-sent { background: rgba(234,179,8,0.12); color: #fbbf24; }
+    .badge-server { background: rgba(59,130,246,0.12); color: #60a5fa; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="pip-dot">P</div>
+      Pips AI
+    </a>
+    <a href="index.html" class="nav-back">← Back to home</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last updated: April 2026 &nbsp;·&nbsp; Applies to all Pips AI applications and pipsai.app</p>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong style="color:#4ade80">Short version:</strong> Your financial data, garden designs, and other personal content never leave your device. Only the minimal data needed to fulfill an explicit AI request is ever transmitted — and only when you click a button to trigger it.</p>
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>Pips AI applications are developed and operated by Ferrier Software, based in the Netherlands. We are the data controller for any personal data processed through our backend service at <code>api.pipsai.app</code>.</p>
+  <p>Contact: <a href="mailto:privacy@pipsai.app">privacy@pipsai.app</a></p>
+
+  <h2>2. Data we collect — overview</h2>
+  <p>The table below summarises every category of data we handle across all Pips AI products.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Data type</th>
+        <th>Where it lives</th>
+        <th>Transmitted?</th>
+        <th>Retained by us?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Bank transactions &amp; statements</td>
+        <td>Your device only</td>
+        <td><span class="badge badge-local">Never</span></td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Garden designs &amp; plan data</td>
+        <td>Your device only</td>
+        <td><span class="badge badge-local">Never</span></td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Network / device scan data</td>
+        <td>Your device only</td>
+        <td><span class="badge badge-local">Never</span></td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Email content (Pip Mail)</td>
+        <td>Your device only</td>
+        <td><span class="badge badge-local">Never</span></td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>AI prompt payloads (image crops, text)</td>
+        <td>In transit only</td>
+        <td><span class="badge badge-sent">On demand</span></td>
+        <td>No (passed through, not stored)</td>
+      </tr>
+      <tr>
+        <td>License key</td>
+        <td>Your device (encrypted) + our database</td>
+        <td><span class="badge badge-sent">For activation &amp; balance</span></td>
+        <td>Yes — required for billing</td>
+      </tr>
+      <tr>
+        <td>Email address (purchase)</td>
+        <td>Our database</td>
+        <td><span class="badge badge-server">At purchase</span></td>
+        <td>Yes — for key recovery &amp; receipts</td>
+      </tr>
+      <tr>
+        <td>Credit balance &amp; usage log</td>
+        <td>Our database</td>
+        <td><span class="badge badge-server">At each AI call</span></td>
+        <td>Yes — required for billing</td>
+      </tr>
+      <tr>
+        <td>Anonymous error reports</td>
+        <td>Our logs</td>
+        <td><span class="badge badge-sent">Automatically</span></td>
+        <td>30 days, then deleted</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Local-first by design</h2>
+  <p>All Pips AI desktop applications store your personal content in a SQLite database on your own device. We do not offer cloud sync, and we cannot access your local files remotely. Your financial data is yours.</p>
+  <p>License keys are stored on your device using the operating system's secure credential storage (Electron <code>safeStorage</code> / macOS Keychain / Windows DPAPI / Linux Secret Service). We never see your key in plaintext on our servers — only a hashed form is stored for validation.</p>
+
+  <h2>4. AI features and data transmission</h2>
+  <p>When you explicitly trigger an AI feature (e.g., "Scan garden", "Analyse statement"), the application:</p>
+  <ol style="margin: 0.5rem 0 1rem 1.25rem; color: var(--text);">
+    <li style="margin-bottom:0.4rem">Extracts the minimal data necessary (e.g., a cropped aerial image, a short text snippet).</li>
+    <li style="margin-bottom:0.4rem">Sends it to our backend at <code>api.pipsai.app</code> along with your license key for credit deduction.</li>
+    <li style="margin-bottom:0.4rem">Our backend forwards the payload to the AI provider (Anthropic Claude API).</li>
+    <li style="margin-bottom:0.4rem">The response is returned to your app. We do not store the prompt or the response.</li>
+  </ol>
+  <p>AI features are never triggered automatically. You must press an explicit button, and the cost in Pips is shown before or immediately upon triggering.</p>
+  <p>Our backend acts as a proxy to protect our API keys and enforce credit limits. It does not log prompt content.</p>
+
+  <h2>5. Purchases and payment data</h2>
+  <p>Payments are processed by <strong>Stripe</strong>. When you purchase Pips credits:</p>
+  <ul>
+    <li>You are redirected to a Stripe-hosted checkout page. Your payment details are entered on Stripe's servers — we never receive your card number or banking details.</li>
+    <li>After a successful payment, Stripe notifies our backend via webhook. We record: your email address, the package purchased, the amount, and the timestamp.</li>
+    <li>Your email address is used solely to: (a) send a purchase confirmation with your license key, and (b) allow key recovery if you lose your key.</li>
+    <li>We do not use your email address for marketing without your explicit consent.</li>
+  </ul>
+
+  <h2>6. Cookies and tracking on this website</h2>
+  <p>This website (pipsai.app) does not use tracking cookies, analytics pixels, or third-party advertising scripts. The only external resources loaded are:</p>
+  <ul>
+    <li>Google Fonts (for typography) — your browser fetches font files from Google's CDN.</li>
+    <li>Your browser may cache static assets from this domain.</li>
+  </ul>
+  <p>No persistent identifiers are stored in your browser when visiting this website.</p>
+
+  <h2>7. Data retention</h2>
+  <ul>
+    <li><strong>License key &amp; balance:</strong> retained for the lifetime of the key. You can deactivate your key at any time from within the app, which removes it from our active database.</li>
+    <li><strong>Purchase records:</strong> retained for 7 years to comply with Dutch tax and accounting law (Article 52 AWR).</li>
+    <li><strong>Email address:</strong> retained as long as you have an active license key. Deleted within 30 days of key deactivation upon written request.</li>
+    <li><strong>Error logs:</strong> 30 days, automatically deleted.</li>
+  </ul>
+
+  <h2>8. Your rights (GDPR)</h2>
+  <p>If you are located in the European Economic Area, you have the following rights under the GDPR:</p>
+  <ul>
+    <li><strong>Right of access:</strong> request a copy of your personal data we hold.</li>
+    <li><strong>Right to rectification:</strong> correct inaccurate data.</li>
+    <li><strong>Right to erasure:</strong> request deletion of your data ("right to be forgotten").</li>
+    <li><strong>Right to data portability:</strong> receive your data in a machine-readable format.</li>
+    <li><strong>Right to object:</strong> object to processing based on legitimate interests.</li>
+    <li><strong>Right to restrict processing:</strong> request that we limit how we use your data.</li>
+  </ul>
+  <p>To exercise any of these rights, email <a href="mailto:privacy@pipsai.app">privacy@pipsai.app</a>. We will respond within 30 days. In most cases, the data we hold is limited to your email address, license key reference, and purchase record.</p>
+  <p>You have the right to lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens) at <a href="https://autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener">autoriteitpersoonsgegevens.nl</a>.</p>
+
+  <h2>9. Data security</h2>
+  <p>We take appropriate technical and organisational measures to protect your data:</p>
+  <ul>
+    <li>All backend communication is encrypted via TLS (HTTPS).</li>
+    <li>Our backend database is hosted on a private server (Hetzner, Germany / EU) with restricted access.</li>
+    <li>License keys are stored hashed; we cannot reconstruct your original key from our database.</li>
+    <li>Stripe handles all payment data under their own PCI DSS compliance.</li>
+  </ul>
+
+  <h2>10. Third-party services</h2>
+  <p>We use the following third-party processors:</p>
+  <ul>
+    <li><strong>Anthropic (Claude API)</strong> — AI inference. Prompts forwarded through our backend. Governed by <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic's Privacy Policy</a>.</li>
+    <li><strong>Stripe</strong> — payment processing. Governed by <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe's Privacy Policy</a>.</li>
+    <li><strong>Resend</strong> — transactional email (purchase confirmations). Only your email address and license key are shared.</li>
+    <li><strong>Hetzner Online GmbH</strong> — server hosting (Germany, EU). No personal data is shared beyond what is stored in our database.</li>
+  </ul>
+
+  <h2>11. Children's privacy</h2>
+  <p>Our applications are not directed at children under 16. We do not knowingly collect personal data from children. If you believe we have inadvertently collected such data, contact us immediately at <a href="mailto:privacy@pipsai.app">privacy@pipsai.app</a>.</p>
+
+  <h2>12. Changes to this policy</h2>
+  <p>We may update this Privacy Policy from time to time. Material changes will be communicated by updating the "Last updated" date at the top and, where possible, by in-app notification. Continued use of the software after the updated policy is posted constitutes acceptance.</p>
+
+  <h2>13. Contact</h2>
+  <p>For privacy-related questions or to exercise your rights:</p>
+  <p>
+    <strong>Ferrier Software</strong><br />
+    The Netherlands<br />
+    <a href="mailto:privacy@pipsai.app">privacy@pipsai.app</a>
+  </p>
+
+</div>
+
+<footer>
+  &copy; 2026 Ferrier Software &nbsp;·&nbsp;
+  <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp;
+  <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+  <a href="index.html">Home</a>
+  <br /><br />
+  Pips AI is not affiliated with any bank, financial institution, or government agency.
+  AI-generated content is for informational purposes only and does not constitute professional advice.
+  v0.1.0
+</footer>
+
+</body>
+</html>
