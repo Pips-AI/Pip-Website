@@ -1,132 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service — Pips AI</title>
+  <title>Gebruiksvoorwaarden — Pips AI</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #080c14;
-      --surface: #0d1322;
-      --border: #1e2a3a;
-      --text: #e2e8f0;
-      --muted: #64748b;
-      --accent: #16a34a;
-      --accent-light: #22c55e;
+      --bg: #080c14; --surface: #0d1322; --border: #1e2a3a;
+      --text: #e2e8f0; --muted: #64748b;
+      --accent: #16a34a; --accent-light: #22c55e;
+      --warn: #f97316;
     }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      line-height: 1.7;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(8, 12, 20, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-    }
-    .nav-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      height: 56px;
-    }
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-    .pip-dot {
-      width: 22px; height: 22px;
-      background: var(--accent);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 11px; font-weight: 700; color: #fff;
-    }
-    .nav-back {
-      margin-left: auto;
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.875rem;
-      transition: color 0.2s;
-    }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(8,12,20,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; }
+    .nav-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; gap: 1rem; height: 56px; }
+    .nav-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.1rem; }
+    .pip-dot { width: 22px; height: 22px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; }
+    .nav-back { margin-left: auto; color: var(--muted); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
     .nav-back:hover { color: var(--text); }
-
-    .page-wrap {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 3rem 2rem 6rem;
-    }
-
-    .page-header {
-      margin-bottom: 2.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .page-header h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
-    .page-header .meta {
-      color: var(--muted);
-      font-size: 0.875rem;
-    }
-
-    h2 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: #fff;
-      margin: 2rem 0 0.75rem;
-    }
-
+    .page-wrap { max-width: 780px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+    .page-header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    .page-header h1 { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+    .page-header .meta { color: var(--muted); font-size: 0.875rem; }
+    h2 { font-size: 1.15rem; font-weight: 600; color: #fff; margin: 2rem 0 0.75rem; }
     p { margin-bottom: 1rem; color: var(--text); }
-
-    ul {
-      margin: 0.5rem 0 1rem 1.25rem;
-      color: var(--text);
-    }
+    ul { margin: 0.5rem 0 1rem 1.25rem; color: var(--text); }
     ul li { margin-bottom: 0.4rem; }
-
     a { color: var(--accent-light); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    .highlight-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      margin: 1.5rem 0;
-    }
-    .highlight-box p { margin: 0; font-size: 0.9rem; color: var(--muted); }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--muted);
-      font-size: 0.8rem;
-      border-top: 1px solid var(--border);
-    }
+    .highlight-box { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+    .highlight-box p { margin: 0; font-size: 0.9rem; }
+    .warn-box { background: #1a0e00; border: 1px solid #7c2d12; border-left: 3px solid var(--warn); border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+    .warn-box p { margin: 0; font-size: 0.9rem; color: #fed7aa; }
+    .warn-box strong { color: #fb923c; }
+    footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); }
     footer a { color: var(--muted); }
     footer a:hover { color: var(--text); }
   </style>
@@ -135,114 +46,103 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <div class="pip-dot">P</div>
-      Pips AI
-    </a>
-    <a href="index.html" class="nav-back">← Back to home</a>
+    <a href="index.html" class="nav-logo"><div class="pip-dot">P</div> Pips AI</a>
+    <a href="index.html" class="nav-back">← Terug naar home</a>
   </div>
 </nav>
 
 <div class="page-wrap">
   <div class="page-header">
-    <h1>Terms of Service</h1>
-    <p class="meta">Last updated: April 2026 &nbsp;·&nbsp; Effective immediately upon use</p>
+    <h1>Gebruiksvoorwaarden</h1>
+    <p class="meta">Versie 1.1 — april 2026 &nbsp;·&nbsp; Van kracht bij gebruik van de software</p>
   </div>
 
   <div class="highlight-box">
-    <p>These Terms govern your use of Pips AI software and services. By downloading, installing, or using any Pips AI application, you agree to these Terms. If you do not agree, do not use the software.</p>
+    <p>Door Pips AI-software te downloaden, installeren of gebruiken, gaat u akkoord met deze voorwaarden. Gebruikt u de software niet, dan gelden deze voorwaarden niet voor u.</p>
   </div>
 
-  <h2>1. About Pips AI</h2>
-  <p>Pips AI is a suite of personal desktop applications (Finance, GardenX, Connect, Mail, and others) developed and published by Ferrier Software. The applications are provided primarily as local desktop tools; some features require a network connection to the Pips Backend service hosted at <code>api.pipsai.app</code>.</p>
-
-  <h2>2. License to Use</h2>
-  <p>We grant you a non-exclusive, non-transferable, revocable license to use the Pips AI applications for personal or internal business purposes. You may:</p>
+  <!-- ── AI-VERMELDING (EU AI Act art. 50) ── -->
+  <h2>1. Gebruik van kunstmatige intelligentie</h2>
+  <div class="warn-box">
+    <p><strong>Kennisgeving conform EU AI Act (Verordening 2024/1689), artikel 50:</strong><br>
+    De AI-functies in Pips AI-applicaties worden aangedreven door grote taalmodellen van Anthropic (Claude). De door de applicatie gegenereerde tekst, analyses, samenvattingen en adviezen zijn <strong>volledig gegenereerd door kunstmatige intelligentie</strong>. Dit wordt u hierbij uitdrukkelijk medegedeeld.</p>
+  </div>
   <ul>
-    <li>Install and run the applications on devices you own or control.</li>
-    <li>Use the software for personal financial management, garden design, or other intended purposes.</li>
-  </ul>
-  <p>You may <strong>not</strong>:</p>
-  <ul>
-    <li>Reverse-engineer, decompile, or disassemble the software beyond what is permitted by applicable law.</li>
-    <li>Redistribute, resell, or sublicense the software without our written permission.</li>
-    <li>Use the software for any unlawful purpose or in violation of third-party rights.</li>
-    <li>Attempt to circumvent license enforcement or credit metering mechanisms.</li>
+    <li>AI-uitvoer wordt gegenereerd door <strong>Anthropic Claude</strong> (claude-haiku-4-5 of claude-sonnet-4-6 afhankelijk van het type verzoek).</li>
+    <li>De AI-uitvoer is automatisch en ongecorrigeerd — er is geen menselijke review vóór weergave.</li>
+    <li>AI kan fouten maken, informatie verkeerd interpreteren of verouderde kennis bevatten.</li>
+    <li>Bij foto-analyse wordt de afbeelding voor verwerking automatisch verkleind (max. 1.600px) en als JPEG naar de AI-provider gestuurd; de originele foto blijft op uw apparaat.</li>
   </ul>
 
-  <h2>3. Pips Credits</h2>
-  <p>Certain AI-powered features within Pips AI applications require Pips credits ("Pips"). Pips are purchased through our payment processor (Stripe) and stored against your license key on our backend.</p>
+  <!-- ── DISCLAIMER ── -->
+  <h2>2. Disclaimer — beperking van aansprakelijkheid</h2>
+  <div class="warn-box">
+    <p><strong>Alle door Pips AI gegenereerde inhoud wordt aangeboden ter goeder trouw en uitsluitend ter informatie.</strong> Ferrier Software kan op geen enkele wijze aansprakelijk worden gesteld voor fouten, onnauwkeurigheden, misinterpretaties of schade die direct of indirect voortvloeit uit het gebruik van door AI gegenereerde inhoud.</p>
+  </div>
+  <p>In het bijzonder geldt:</p>
   <ul>
-    <li>Credits are consumed when you actively invoke an AI feature. Credits are never deducted automatically in the background.</li>
-    <li>Pips credits are <strong>non-refundable</strong> once consumed by a completed AI call.</li>
-    <li>Unused credits on a valid license key remain available until the key is deactivated or the service is discontinued.</li>
-    <li>We reserve the right to adjust credit pricing for future purchases, but existing purchased credits are not affected.</li>
+    <li>De uitleg die Pip Simple genereert is <strong>geen juridisch, medisch, financieel of ander professioneel advies</strong>. Raadpleeg altijd een gekwalificeerde professional voor beslissingen met wezenlijke gevolgen.</li>
+    <li>Financiële categorisaties in Pip Finance zijn <strong>geen accountantsverklaring</strong> en kunnen afwijken van werkelijke transacties.</li>
+    <li>Tuinontwerpen in Pip Garden zijn suggesties — lokale regelgeving, bodemgesteldheid en plantcondities vallen buiten de kennis van de AI.</li>
+    <li>Netwerk- en beveiligingsadviezen in Pip Connect zijn indicatief en vervangen geen professioneel beveiligingsonderzoek.</li>
+    <li>E-mailanalyses in Pip Mail zijn gebaseerd op patroonherkenning en kunnen abonnementen verkeerd herkennen of missen.</li>
+  </ul>
+  <p>De totale aansprakelijkheid van Ferrier Software jegens u is in alle gevallen beperkt tot het bedrag dat u in de 12 maanden voorafgaand aan de claim aan Pips-credits heeft betaald.</p>
+
+  <!-- ── OVERIGE ARTIKELEN ── -->
+  <h2>3. Over Pips AI</h2>
+  <p>Pips AI is een suite van persoonlijke applicaties ontwikkeld en gepubliceerd door <strong>Ferrier Software</strong>, gevestigd in Nederland. De applicaties zijn primair bedoeld als lokale tools; sommige functies vereisen een netwerkverbinding met de Pips-backend op <code>api.pipsai.app</code>.</p>
+
+  <h2>4. Licentie</h2>
+  <p>U krijgt een niet-exclusieve, niet-overdraagbare, herroepbare licentie voor persoonlijk of intern zakelijk gebruik. U mag de software <strong>niet</strong>:</p>
+  <ul>
+    <li>Reverse-engineeren, decompileren of disassembleren buiten wat wettelijk is toegestaan;</li>
+    <li>Doorverkopen, herverdelen of in sublicentie geven zonder schriftelijke toestemming;</li>
+    <li>Gebruiken voor onrechtmatige doeleinden of voor het omzeilen van het PIPS-creditssysteem.</li>
   </ul>
 
-  <h2>4. Payment and Billing</h2>
-  <p>Payments are processed by Stripe. By making a purchase you also agree to Stripe's terms of service. We do not store your payment card details.</p>
-  <p>All prices are shown inclusive of applicable VAT where required by law. Pricing is subject to change for future purchases.</p>
-  <p>Refunds for unused credit packages may be requested within 14 days of purchase by contacting us at <a href="mailto:support@pipsai.app">support@pipsai.app</a>, provided the credits have not been (substantially) consumed.</p>
-
-  <h2>5. Your Data</h2>
-  <p>Pips AI applications are designed with a local-first philosophy:</p>
+  <h2>5. PIPS-credits</h2>
   <ul>
-    <li>Financial data (bank statements, transactions) is stored exclusively on your device in a local SQLite database.</li>
-    <li>Garden designs, device configurations, and other project data remain local.</li>
-    <li>When you use an AI feature, only the minimal necessary data (e.g., an image crop, a text prompt) is sent to our backend and onwards to the AI provider. We do not retain this data beyond the duration of the API call.</li>
-    <li>We collect basic usage telemetry (feature invocations, error reports) to improve the product. This data is anonymous and cannot be linked to your identity without your license key.</li>
-  </ul>
-  <p>See our <a href="privacy.html">Privacy Policy</a> for full details.</p>
-
-  <h2>6. AI-Generated Content</h2>
-  <p>AI features in Pips AI applications are powered by third-party large language models (including Anthropic Claude). AI outputs are generated automatically and may contain errors, inaccuracies, or omissions.</p>
-  <ul>
-    <li>AI outputs are provided for informational and convenience purposes only.</li>
-    <li>Financial categorizations, garden design suggestions, and other AI-generated content do <strong>not</strong> constitute professional advice.</li>
-    <li>You are solely responsible for verifying AI-generated results before acting on them.</li>
+    <li>Credits worden uitsluitend verbruikt wanneer u een AI-functie actief activeert — nooit automatisch op de achtergrond.</li>
+    <li>Verbruikte credits zijn <strong>niet restitueerbaar</strong>.</li>
+    <li>Ongebruikte credits op een geldig licentiesleutel blijven beschikbaar zolang de dienst operationeel is.</li>
+    <li>Creditprijzen voor toekomstige aankopen kunnen worden aangepast; reeds gekochte credits worden niet beïnvloed.</li>
+    <li>Terugbetaling van ongebruikte creditpakketten kan worden aangevraagd binnen 14 dagen na aankoop via <a href="mailto:support@pipsai.app">support@pipsai.app</a>, mits niet (substantieel) verbruikt.</li>
   </ul>
 
-  <h2>7. Financial Data Disclaimer</h2>
-  <p>Pip Finance is a personal finance management tool, not a financial advisory service. The application:</p>
+  <h2>6. Betalingen</h2>
+  <p>Betalingen worden verwerkt door Stripe. Door een aankoop te doen gaat u ook akkoord met de voorwaarden van Stripe. Wij slaan geen betaalgegevens op. Alle prijzen zijn inclusief BTW waar van toepassing.</p>
+
+  <h2>7. Uw gegevens en privacy</h2>
   <ul>
-    <li>Parses and categorizes bank statement data using automated rules — categorizations may be incorrect.</li>
-    <li>Does not connect directly to your bank and cannot initiate transactions.</li>
-    <li>Is not affiliated with ING, Rabobank, ABN AMRO, or any other financial institution.</li>
-    <li>Should not be used as the sole basis for financial, tax, or legal decisions.</li>
+    <li>Financiële gegevens, tuinontwerpen en andere projectdata worden <strong>uitsluitend lokaal</strong> op uw apparaat opgeslagen.</li>
+    <li>Bij gebruik van een AI-functie wordt alleen de minimaal benodigde data (tekst of verkleinde afbeelding) naar onze backend en vervolgens naar de AI-provider gestuurd. Wij bewaren deze data niet na de API-aanroep.</li>
+    <li>Bankrekeningnummers en namen van tegenpartijen worden geanonimiseerd vóór verzending naar de AI (Pip Finance).</li>
+    <li>E-mailinhoud verlaat nooit uw apparaat — alleen geanonimiseerde metadata wordt bij AI-functies in Pip Mail verzonden.</li>
   </ul>
+  <p>Zie ons <a href="privacy.html">Privacybeleid</a> voor volledige details.</p>
 
-  <h2>8. Availability and Changes</h2>
-  <p>We strive to keep the Pips Backend service available, but we do not guarantee uptime. The service may be temporarily unavailable due to maintenance, updates, or circumstances beyond our control.</p>
-  <p>We reserve the right to modify, suspend, or discontinue any part of the service at any time. We will provide reasonable notice of material changes where possible.</p>
-  <p>We may update these Terms from time to time. Continued use of the software after an update constitutes acceptance of the revised Terms.</p>
+  <h2>8. Beschikbaarheid</h2>
+  <p>We streven naar maximale beschikbaarheid van de Pips-backend, maar garanderen geen uptime. De dienst kan tijdelijk niet beschikbaar zijn door onderhoud, updates of omstandigheden buiten onze controle. We behouden het recht om de dienst te wijzigen, opschorten of te beëindigen, met redelijke kennisgeving waar mogelijk.</p>
 
-  <h2>9. Limitation of Liability</h2>
-  <p>To the maximum extent permitted by applicable law:</p>
-  <ul>
-    <li>The software is provided "as is" without warranties of any kind, express or implied.</li>
-    <li>We are not liable for any indirect, incidental, consequential, or punitive damages arising from your use of the software.</li>
-    <li>Our total liability to you for any claim under these Terms shall not exceed the amount you paid for Pips credits in the 12 months preceding the claim.</li>
-  </ul>
+  <h2>9. Wijzigingen in deze voorwaarden</h2>
+  <p>We kunnen deze voorwaarden van tijd tot tijd bijwerken. Voortgezet gebruik na een update houdt acceptatie van de herziene voorwaarden in. De ingangsdatum bovenaan deze pagina geeft aan wanneer de laatste versie van kracht is gegaan.</p>
 
-  <h2>10. Governing Law</h2>
-  <p>These Terms are governed by the laws of the Netherlands. Any disputes shall be submitted to the exclusive jurisdiction of the competent courts in the Netherlands, unless mandatory consumer protection law in your country requires otherwise.</p>
+  <h2>10. Toepasselijk recht</h2>
+  <p>Op deze voorwaarden is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de bevoegde rechter in Nederland, tenzij dwingende consumentenbeschermingswetgeving in uw land anders vereist.</p>
 
   <h2>11. Contact</h2>
-  <p>Questions about these Terms? Contact us at <a href="mailto:support@pipsai.app">support@pipsai.app</a>.</p>
-  <p>Ferrier Software<br />
-  The Netherlands</p>
-
+  <p>Vragen over deze voorwaarden? Neem contact op via <a href="mailto:support@pipsai.app">support@pipsai.app</a>.<br><br>
+  Ferrier Software<br>Nederland</p>
 </div>
 
 <footer>
   &copy; 2026 Ferrier Software &nbsp;·&nbsp;
-  <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp;
-  <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
-  <a href="index.html">Home</a>
-  <br /><br />
-  Pips AI is not affiliated with any bank, financial institution, or government agency.
-  AI-generated content is for informational purposes only and does not constitute professional advice.
-  v0.1.0
+  <a href="terms.html">Gebruiksvoorwaarden</a> &nbsp;·&nbsp;
+  <a href="privacy.html">Privacybeleid</a> &nbsp;·&nbsp;
+  <a href="index.html">Home</a><br><br>
+  AI-gegenereerde inhoud is uitsluitend ter informatie en vormt geen professioneel advies.
+  Pips AI is niet gelieerd aan enige bank, verzekeraar of overheidsinstantie.
 </footer>
 
 </body>
