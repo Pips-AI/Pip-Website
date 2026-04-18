@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer — Pips AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #080c14;
+      --surface: #0d1322;
+      --border: #1e2a3a;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --accent: #16a34a;
+      --accent-light: #22c55e;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 12, 20, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      height: 56px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .pip-dot {
+      width: 22px; height: 22px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: #fff;
+    }
+    .nav-back {
+      margin-left: auto;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--text); }
+
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    .page-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .page-header .meta {
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #fff;
+      margin: 2rem 0 0.75rem;
+    }
+
+    p { margin-bottom: 1rem; color: var(--text); }
+
+    ul {
+      margin: 0.5rem 0 1rem 1.25rem;
+      color: var(--text);
+    }
+    ul li { margin-bottom: 0.4rem; }
+
+    a { color: var(--accent-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .highlight-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .highlight-box p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="pip-dot">P</div>
+      Pips AI
+    </a>
+    <a href="index.html" class="nav-back">← Terug naar home</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-header">
+    <h1>Disclaimer &amp; Aansprakelijkheid</h1>
+    <p class="meta">Laatste update: april 2026 &nbsp;·&nbsp; Van toepassing op alle Pips AI-applicaties en pipsai.app</p>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong style="color:#4ade80">Kort samengevat:</strong> Pips AI-apps zijn hulpmiddelen, geen gecertificeerde boekhoudsoftware of financieel advies. AI-uitkomsten zijn altijd een voorstel — controleer vóór gebruik. U bent zelf verantwoordelijk voor de juistheid van ingevoerde en opgeslagen gegevens.</p>
+  </div>
+
+  <h2>1. AI-gegenereerde inhoud</h2>
+  <p>Pip Bills en andere Pips AI-applicaties maken gebruik van kunstmatige intelligentie (Anthropic Claude) om gegevens automatisch te herkennen en te verwerken. De resultaten hiervan — zoals geëxtraheerde factuurgegevens, bedragen, BTW-tarieven en datums — zijn een <strong>voorstel op basis van AI-analyse</strong> en kunnen fouten bevatten.</p>
+  <p>Conform artikel 50 van de EU AI Act is alle AI-gegenereerde inhoud als zodanig herkenbaar in de interface.</p>
+  <p>U bent zelf verantwoordelijk voor het controleren van AI-uitkomsten vóór opslaan of gebruik in administratieve of fiscale processen.</p>
+
+  <h2>2. Geen aansprakelijkheid</h2>
+  <p>Ferrier Software / Pips-AI is niet aansprakelijk voor schade die voortvloeit uit:</p>
+  <ul>
+    <li>Fouten in AI-gegenereerde factuurdata, bedragen of datums;</li>
+    <li>Onjuiste BTW-berekeningen of -aangiften op basis van app-uitkomsten;</li>
+    <li>Gemiste betalingen, boekingsfouten of fiscale gevolgen;</li>
+    <li>Verlies van lokaal opgeslagen gegevens door apparaatproblemen;</li>
+    <li>Beschikbaarheid of continuïteit van de AI-dienst.</li>
+  </ul>
+  <p>De software wordt aangeboden "zoals hij is" (<em>as is</em>), zonder garanties van welke aard dan ook.</p>
+
+  <h2>3. Geen professioneel advies</h2>
+  <p>Pip Bills is een hulpmiddel voor persoonlijk of zakelijk administratief gebruik. De app vervangt <strong>geen</strong>:</p>
+  <ul>
+    <li>Gecertificeerde boekhoudsoftware;</li>
+    <li>Belastingadviseur of accountant;</li>
+    <li>Officiële BTW-aangiftesoftware.</li>
+  </ul>
+  <p>Raadpleeg altijd een gekwalificeerde boekhouder of belastingadviseur voor uw BTW-aangifte en jaarrekening.</p>
+
+  <h2>4. Buitenlandse valuta en BTW</h2>
+  <p>Bij facturen in vreemde valuta (USD, GBP, CHF etc.) berekent Pip Bills geen wisselkoersen. U dient zelf het werkelijk afgeschreven EUR-bedrag in te voeren op basis van uw bank- of creditcardafschrift. Dit bedrag wordt gebruikt voor BTW-doeleinden.</p>
+  <p>De gegenereerde BTW-overzichten zijn indicatief. Voor facturen van niet-EU-leveranciers kan verlegde BTW (artikel 12 Wet OB) van toepassing zijn — de behandeling hiervan valt buiten de automatische berekening van de app. Raadpleeg uw boekhouder.</p>
+
+  <h2>5. Infrastructuur en AI-verwerking</h2>
+  <p>AI-verwerking verloopt via onze backend (<code>api.pipsai.app</code>, Hetzner Frankfurt — EU) en Anthropic Claude (Anthropic PBC, USA). Anthropic valt onder Amerikaans recht en heeft zijn eigen privacybeleid. Wij zijn niet aansprakelijk voor de verwerking door Anthropic. Uw factuurdata wordt door Anthropic niet gebruikt voor het trainen van AI-modellen.</p>
+  <p>Meer informatie over gegevensverwerking vindt u in ons <a href="privacy.html">privacybeleid</a>.</p>
+
+  <h2>6. Beta-software</h2>
+  <p>Alle Pips AI-applicaties bevinden zich in een vroeg ontwikkelstadium (beta). Functionaliteit, interfaces en prijzen kunnen zonder voorafgaande kennisgeving worden gewijzigd. Wij adviseren geen kritieke bedrijfsprocessen uitsluitend op deze software te baseren zonder back-upverificatie.</p>
+
+  <h2>7. Wijzigingen</h2>
+  <p>Wij kunnen deze disclaimer te allen tijde aanpassen. De meest actuele versie is beschikbaar op <a href="https://pipsai.app/disclaimer">pipsai.app/disclaimer</a>. Voortgezet gebruik van de applicaties na een aanpassing geldt als aanvaarding van de gewijzigde disclaimer.</p>
+
+  <h2>8. Contact</h2>
+  <p>Voor vragen over deze disclaimer:<br />
+  <a href="mailto:hello@pipsai.app">hello@pipsai.app</a></p>
+
+</div>
+
+<footer>
+  &copy; 2026 Ferrier Software &nbsp;·&nbsp;
+  <a href="terms.html">Gebruiksvoorwaarden</a> &nbsp;·&nbsp;
+  <a href="privacy.html">Privacybeleid</a> &nbsp;·&nbsp;
+  <a href="disclaimer.html">Disclaimer</a> &nbsp;·&nbsp;
+  <a href="index.html">Home</a>
+  <br /><br />
+  Pips AI is geen gecertificeerde boekhoud- of belastingoplossing. AI-uitkomsten zijn informatief en vormen geen professioneel advies.
+  v0.1.0
+</footer>
+
+</body>
+</html>
