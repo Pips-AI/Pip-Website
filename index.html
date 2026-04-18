@@ -541,7 +541,7 @@
 
   <div class="hero-stats">
     <div class="stat">
-      <div class="stat-num">8</div>
+      <div class="stat-num">9</div>
       <div class="stat-label">Apps</div>
     </div>
     <div class="stat">
@@ -810,6 +810,79 @@
       </div>
     </div>
 
+    <!-- Pip Bills -->
+    <div class="app-card">
+      <div class="app-preview">
+        <div style="background:#0d1b2a;width:100%;height:100%;display:flex;overflow:hidden">
+          <!-- Sidebar -->
+          <div style="width:44px;background:#0a1628;display:flex;flex-direction:column;align-items:center;padding:10px 0;gap:10px;border-right:1px solid rgba(255,255,255,0.05)">
+            <div style="width:22px;height:22px;border-radius:5px;background:rgba(96,165,250,0.3)"></div>
+            <div style="width:22px;height:4px;border-radius:2px;background:rgba(96,165,250,0.5)"></div>
+            <div style="width:22px;height:4px;border-radius:2px;background:rgba(255,255,255,0.1)"></div>
+            <div style="width:22px;height:4px;border-radius:2px;background:rgba(255,255,255,0.1)"></div>
+          </div>
+          <!-- Content -->
+          <div style="flex:1;background:#f0f4f8;padding:10px 10px 8px">
+            <div style="font-size:7px;font-weight:700;color:#1e293b;margin-bottom:6px">Factuur controleren</div>
+            <div style="background:#fff;border-radius:5px;padding:7px 8px;box-shadow:0 1px 3px rgba(0,0,0,0.08)">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 6px">
+                <div>
+                  <div style="font-size:5px;color:#64748b;margin-bottom:1px">Leverancier</div>
+                  <div style="font-size:6px;color:#1e293b;font-weight:600;background:#f0f4f8;border-radius:3px;padding:2px 4px">Adobe Systems BV</div>
+                </div>
+                <div>
+                  <div style="font-size:5px;color:#64748b;margin-bottom:1px">Factuurnummer</div>
+                  <div style="font-size:6px;color:#1e293b;font-weight:600;background:#f0f4f8;border-radius:3px;padding:2px 4px">INV-2025-0142</div>
+                </div>
+                <div>
+                  <div style="font-size:5px;color:#64748b;margin-bottom:1px">Subtotaal excl. BTW</div>
+                  <div style="font-size:6px;color:#1e293b;font-weight:600;background:#f0f4f8;border-radius:3px;padding:2px 4px">€ 595,00</div>
+                </div>
+                <div>
+                  <div style="font-size:5px;color:#64748b;margin-bottom:1px">BTW 21%</div>
+                  <div style="font-size:6px;color:#1e293b;font-weight:600;background:#f0f4f8;border-radius:3px;padding:2px 4px">€ 124,95</div>
+                </div>
+              </div>
+              <div style="margin-top:5px;display:flex;justify-content:space-between;align-items:center">
+                <div style="font-size:5px;padding:2px 5px;background:#dbeafe;color:#1e40af;border-radius:3px;font-weight:600">Hoge zekerheid</div>
+                <div style="font-size:7px;font-weight:700;color:#0d1b2a">Totaal: € 719,95</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:4px;margin-top:5px">
+              <div style="flex:1;background:#60a5fa;border-radius:4px;padding:3px;text-align:center;font-size:6px;font-weight:700;color:#fff">Opslaan</div>
+              <div style="background:rgba(0,0,0,0.08);border-radius:4px;padding:3px 6px;font-size:6px;color:#64748b">Annuleren</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="app-body">
+        <div class="app-top">
+          <div>
+            <div class="app-name-row">
+              <div>
+                <div class="app-name">Pip Bills</div>
+                <div class="app-tagline">Invoice processing &amp; VAT preparation</div>
+              </div>
+            </div>
+          </div>
+          <span class="app-badge badge-beta">Beta</span>
+        </div>
+        <p class="app-desc">Import PDF and photo invoices — AI extracts all fields automatically. Prepare your quarterly Dutch VAT return with the official BTW aangifte form pre-filled from your invoices. Built for Dutch sole traders and SMEs.</p>
+        <div class="app-features">
+          <div class="app-feature">PDF &amp; photo invoice import with AI extraction</div>
+          <div class="app-feature">Quarterly VAT report (21%, 9%, 0% split)</div>
+          <div class="app-feature">Official BTW aangifte form (rubrieken 1a–5e)</div>
+          <div class="app-feature">Multi-company support with versioned submissions</div>
+          <div class="app-feature">100% local data — SQLite on your device</div>
+        </div>
+        <div class="app-actions">
+          <a href="#download" class="app-btn app-btn-primary">Download</a>
+          <a href="https://github.com/Pips-AI/Pip-bills" target="_blank" class="app-btn app-btn-ghost">GitHub</a>
+        </div>
+        <div class="app-platform">macOS &amp; Windows · Free download · Pips for AI extraction</div>
+      </div>
+    </div>
+
     <!-- Pip Health — coming soon -->
     <div class="app-card coming">
       <div class="app-preview">
@@ -1051,9 +1124,17 @@
             <span style="color:var(--muted)">Simple — text simplification</span>
             <span style="color:var(--accent);font-weight:600">0.13 Pip</span>
           </div>
-          <div style="display:flex;justify-content:space-between;font-size:13px;padding:7px 0">
+          <div style="display:flex;justify-content:space-between;font-size:13px;padding:7px 0;border-bottom:1px solid var(--border)">
             <span style="color:var(--muted)">Simple — photo analysis</span>
             <span style="color:var(--accent);font-weight:600">0.6 Pip</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;padding:7px 0;border-bottom:1px solid var(--border)">
+            <span style="color:var(--muted)">Bills — PDF invoice extraction</span>
+            <span style="color:var(--accent);font-weight:600">0.5 Pip</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:13px;padding:7px 0">
+            <span style="color:var(--muted)">Bills — photo invoice extraction</span>
+            <span style="color:var(--accent);font-weight:600">1.2 Pip</span>
           </div>
         </div>
       </div>
@@ -1235,7 +1316,24 @@
 
     <div class="dl-card">
       <div class="dl-top">
-        
+        <div>
+          <div class="dl-name">Pip Bills</div>
+          <div class="dl-version">v0.1.0 beta · <span class="tag">Beta</span></div>
+        </div>
+      </div>
+      <div class="dl-buttons">
+        <a class="dl-btn" href="#" onclick="dlClick(event, 'bills-mac')">
+          <span class="dl-btn-text">macOS <span class="dl-btn-sub">Universal (Apple Silicon + Intel) · .dmg</span></span>
+        </a>
+        <a class="dl-btn" href="#" onclick="dlClick(event, 'bills-win')">
+          <span class="dl-btn-text">Windows <span class="dl-btn-sub">x64 · .exe installer</span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="dl-card">
+      <div class="dl-top">
+
         <div>
           <div class="dl-name">Pip Health</div>
           <div class="dl-version"><span class="tag">Coming soon</span></div>
@@ -1270,6 +1368,7 @@
         <li><a href="#apps">Pip Mail</a></li>
         <li><a href="https://simple.pipsai.app" target="_blank">Pip Simple</a></li>
         <li><a href="https://tickets.pipsai.app" target="_blank">Pip Tickets</a></li>
+        <li><a href="#apps">Pip Bills</a></li>
         <li><a href="#apps">Pip Health ·&nbsp;<em>soon</em></a></li>
         <li><a href="#apps">Pip Travel ·&nbsp;<em>soon</em></a></li>
       </ul>
