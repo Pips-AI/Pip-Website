@@ -69,7 +69,8 @@
     <h1>Toestemming gegeven</h1>
     <p>Klik op de knop om terug te gaan naar Pip Bills.</p>
     <a id="open-btn" class="open-btn" href="#">Open Pip Bills</a>
-    <p class="hint">Als Pip Bills al open is, klik dan op de knop.</p>
+    <p class="hint" id="hint-before">Als Pip Bills al open is, klik dan op de knop.</p>
+    <p class="hint" id="hint-after" style="display:none">Pip Bills is geopend. Je kunt dit venster sluiten.</p>
   </div>
 
   <div id="error-view" style="display:none">
@@ -101,6 +102,11 @@
     btn.addEventListener('click', (e) => {
       e.preventDefault()
       window.location.href = deepLink
+      document.getElementById('hint-before').style.display = 'none'
+      document.getElementById('hint-after').style.display  = 'block'
+      btn.style.display = 'none'
+      // Probeer venster te sluiten (werkt als het tab geopend is via protocol-redirect)
+      setTimeout(() => window.close(), 1500)
     })
   } else {
     document.getElementById('error-view').style.display = 'block'
