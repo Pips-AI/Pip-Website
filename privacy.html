@@ -184,11 +184,11 @@
 <div class="page-wrap">
   <div class="page-header">
     <h1>Privacy Policy</h1>
-    <p class="meta">Last updated: April 2026 &nbsp;·&nbsp; Applies to all Pips AI applications and pipsai.app</p>
+    <p class="meta">Last updated: April 2026 (v1.2 — Digipoort BTW filing added) &nbsp;·&nbsp; Applies to all Pips AI applications and pipsai.app</p>
   </div>
 
   <div class="highlight-box">
-    <p><strong style="color:#4ade80">Short version:</strong> Your financial data, garden designs, and other personal content never leave your device. Only the minimal data needed to fulfill an explicit AI request is ever transmitted — and only when you click a button to trigger it. The exception is Pip Bills' optional PSD2 bank connection: if you choose to link your bank, your bank transactions are fetched via our backend and stored locally on your device. We do not retain transaction data on our servers.</p>
+    <p><strong style="color:#4ade80">Short version:</strong> Your financial data, garden designs, and other personal content never leave your device. Only the minimal data needed to fulfill an explicit AI request is ever transmitted — and only when you click a button to trigger it. The exception is Pip Bills' optional PSD2 bank connection and optional Digipoort BTW filing: if you choose to use these features, the minimal required data is transmitted securely to the relevant party (Enable Banking or the Dutch Tax Authority). We do not retain transaction data or tax return data on our servers.</p>
   </div>
 
   <h2>1. Who we are</h2>
@@ -225,6 +225,18 @@
         <td>Your device (encrypted) + Enable Banking</td>
         <td><span class="badge badge-sent">On connect &amp; refresh</span></td>
         <td>No — token is held by Enable Banking, not by us</td>
+      </tr>
+      <tr>
+        <td>BTW-aangifte data (Pip Bills only — optional Digipoort feature)</td>
+        <td>Your device + Dutch Tax Authority (Belastingdienst)</td>
+        <td><span class="badge badge-sent">On explicit submission only</span></td>
+        <td>No — snapshot stored locally on your device only</td>
+      </tr>
+      <tr>
+        <td>Filing confirmation log (Pip Bills Digipoort feature)</td>
+        <td>Your device only (local SQLite)</td>
+        <td><span class="badge badge-local">Never</span></td>
+        <td>No — local only</td>
       </tr>
       <tr>
         <td>Garden designs &amp; plan data</td>
@@ -306,7 +318,21 @@
   <p><strong>Data clusters we request:</strong> Transactions and Account details (IBAN, account name). We do not request balance data.</p>
   <p><strong>Consent duration:</strong> up to 90 days. Pip Bills will remind you before expiry so you can renew if you wish.</p>
 
-  <h2>6. Purchases and payment data</h2>
+  <h2>6. Digipoort BTW filing (Pip Bills — optional)</h2>
+  <p>Pip Bills offers an optional feature to file your quarterly VAT return (BTW-aangifte) automatically with the Dutch Tax Authority (Belastingdienst) via the Digipoort/SBR channel. This feature is entirely optional — you can continue to file manually via the Belastingdienst website.</p>
+  <p>If you choose to use Digipoort filing:</p>
+  <ol style="margin: 0.5rem 0 1rem 1.25rem; color: var(--text);">
+    <li style="margin-bottom:0.4rem">Pip Bills calculates your VAT figures from your local invoice data (no data leaves your device at this stage).</li>
+    <li style="margin-bottom:0.4rem">You review every VAT field on-screen and must actively confirm accuracy by ticking a confirmation checkbox.</li>
+    <li style="margin-bottom:0.4rem">Only after your explicit confirmation does Pip Bills transmit your VAT return directly to the Belastingdienst via the Digipoort SOAP/SBR channel, authenticated with a PKIoverheid services server certificate issued to Ferrier Software by <strong>Digidentity B.V.</strong></li>
+    <li style="margin-bottom:0.4rem">The VAT figures, your RSIN/BTW number, and the filing period are transmitted. No other personal financial data is included beyond what is required by the Belastingdienst's SBR taxonomy.</li>
+    <li style="margin-bottom:0.4rem">A confirmation record (timestamp, quarter, VAT figures) is stored <strong>locally on your device only</strong>. We do not receive or store this on our servers.</li>
+  </ol>
+  <p><strong>Responsibility:</strong> Under Dutch tax law (AWR), you — the taxpayer — remain fully and personally responsible for the accuracy and completeness of every tax return, regardless of whether you file manually or via software. By confirming and submitting, you declare that the data is correct. Ferrier Software is liable only for technical transmission failures, not for errors in the underlying data.</p>
+  <p><strong>PKIoverheid certificate:</strong> To authenticate with Digipoort, Pip Bills uses a PKIoverheid services server certificate issued to Ferrier Software by Digidentity B.V. (a qualified Trust Service Provider under eIDAS). This certificate identifies the software to the Belastingdienst; it does not contain any of your personal data. Digidentity's certificate practice statement is available at <a href="https://www.digidentity.eu" target="_blank" rel="noopener">digidentity.eu</a>.</p>
+  <p><strong>User authorisation (machtiging):</strong> The first time you file via Digipoort, the Belastingdienst may send you a letter confirming that Ferrier Software is authorised to submit on your behalf. You can view and revoke this authorisation at any time via <a href="https://mijn.belastingdienst.nl" target="_blank" rel="noopener">Mijn Belastingdienst</a>.</p>
+
+  <h2>7. Purchases and payment data</h2>
   <p>Payments are processed by <strong>Stripe</strong>. When you purchase Pips credits:</p>
   <ul>
     <li>You are redirected to a Stripe-hosted checkout page. Your payment details are entered on Stripe's servers — we never receive your card number or banking details.</li>
@@ -315,7 +341,7 @@
     <li>We do not use your email address for marketing without your explicit consent.</li>
   </ul>
 
-  <h2>7. Cookies and tracking on this website</h2>
+  <h2>8. Cookies and tracking on this website</h2>
   <p>This website (pipsai.app) does not use tracking cookies, analytics pixels, or third-party advertising scripts. The only external resources loaded are:</p>
   <ul>
     <li>Google Fonts (for typography) — your browser fetches font files from Google's CDN.</li>
@@ -323,7 +349,7 @@
   </ul>
   <p>No persistent identifiers are stored in your browser when visiting this website.</p>
 
-  <h2>8. Data retention</h2>
+  <h2>9. Data retention</h2>
   <ul>
     <li><strong>License key &amp; balance:</strong> retained for the lifetime of the key. You can deactivate your key at any time from within the app, which removes it from our active database.</li>
     <li><strong>Purchase records:</strong> retained for 7 years to comply with Dutch tax and accounting law (Article 52 AWR).</li>
@@ -331,7 +357,7 @@
     <li><strong>Error logs:</strong> 30 days, automatically deleted.</li>
   </ul>
 
-  <h2>9. Your rights (GDPR)</h2>
+  <h2>10. Your rights (GDPR)</h2>
   <p>If you are located in the European Economic Area, you have the following rights under the GDPR:</p>
   <ul>
     <li><strong>Right of access:</strong> request a copy of your personal data we hold.</li>
@@ -344,7 +370,7 @@
   <p>To exercise any of these rights, email <a href="mailto:privacy@pipsai.app">privacy@pipsai.app</a>. We will respond within 30 days. In most cases, the data we hold is limited to your email address, license key reference, and purchase record.</p>
   <p>You have the right to lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens) at <a href="https://autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener">autoriteitpersoonsgegevens.nl</a>.</p>
 
-  <h2>10. Data security</h2>
+  <h2>11. Data security</h2>
   <p>We take appropriate technical and organisational measures to protect your data:</p>
   <ul>
     <li>All backend communication is encrypted via TLS (HTTPS).</li>
@@ -353,23 +379,25 @@
     <li>Stripe handles all payment data under their own PCI DSS compliance.</li>
   </ul>
 
-  <h2>11. Third-party services</h2>
+  <h2>12. Third-party services</h2>
   <p>We use the following third-party processors:</p>
   <ul>
     <li><strong>Anthropic (Claude API)</strong> — AI inference. Prompts forwarded through our backend. Governed by <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic's Privacy Policy</a>.</li>
     <li><strong>Stripe</strong> — payment processing. Governed by <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe's Privacy Policy</a>.</li>
     <li><strong>Resend</strong> — transactional email (purchase confirmations). Only your email address and license key are shared.</li>
     <li><strong>Hetzner Online GmbH</strong> — server hosting (Germany, EU). No personal data is shared beyond what is stored in our database.</li>
+    <li><strong>Belastingdienst (Dutch Tax Authority)</strong> — recipient of BTW returns filed via Digipoort (Pip Bills optional feature). Only RSIN/BTW number, filing period, and VAT figures are transmitted. Governed by Dutch tax law (AWR) and GDPR. <a href="https://www.belastingdienst.nl/wps/wcm/connect/bldcontenten/belastingdienst/individuals/privacy/" target="_blank" rel="noopener">Belastingdienst Privacy Statement</a>.</li>
+    <li><strong>Digidentity B.V.</strong> — qualified Trust Service Provider (TSP) issuing the PKIoverheid services server certificate used for Digipoort authentication. Digidentity does not receive your tax data. Governed by <a href="https://www.digidentity.eu/en/privacy/" target="_blank" rel="noopener">Digidentity's Privacy Policy</a>.</li>
     <li><strong>Enable Banking Oy</strong> — PSD2/Open Banking intermediary (Pip Bills only, optional). Licensed AISP under PSD2, registered in Finland and passported across the EEA. Processes bank consent tokens and transaction data on behalf of users who choose to link their bank. Governed by <a href="https://enablebanking.com/privacy-policy/" target="_blank" rel="noopener">Enable Banking's Privacy Policy</a>.</li>
   </ul>
 
-  <h2>12. Children's privacy</h2>
+  <h2>13. Children's privacy</h2>
   <p>Our applications are not directed at children under 16. We do not knowingly collect personal data from children. If you believe we have inadvertently collected such data, contact us immediately at <a href="mailto:privacy@pipsai.app">privacy@pipsai.app</a>.</p>
 
-  <h2>13. Changes to this policy</h2>
+  <h2>14. Changes to this policy</h2>
   <p>We may update this Privacy Policy from time to time. Material changes will be communicated by updating the "Last updated" date at the top and, where possible, by in-app notification. Continued use of the software after the updated policy is posted constitutes acceptance.</p>
 
-  <h2>14. Contact</h2>
+  <h2>15. Contact</h2>
   <p>For privacy-related questions or to exercise your rights:</p>
   <p>
     <strong>Ferrier Software</strong><br />
