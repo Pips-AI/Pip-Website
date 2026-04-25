@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pip Bills — SBR Aangifte Omzetbelasting Software</title>
+  <meta name="description" content="Pip Bills — software voor Nederlandse zzp'ers en kleine ondernemers voor factuurverwerking, BTW-berekening en aangifte omzetbelasting via Digipoort." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #080c14;
+      --surface: #0d1322;
+      --surface2:#111827;
+      --border:  #1e2a3a;
+      --text:    #e2e8f0;
+      --muted:   #64748b;
+      --accent:  #16a34a;
+      --blue:    #3b82f6;
+      --blue-dim:rgba(59,130,246,0.12);
+      --green-dim:rgba(22,163,74,0.12);
+      --amber:   #f59e0b;
+      --amber-dim:rgba(245,158,11,0.12);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(8,12,20,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { text-decoration: none; font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em; }
+    .nav-logo .pip { color: #e8eaf0; }
+    .nav-logo .s   { color: var(--accent); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-size: 0.875rem; transition: color .15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+
+    /* Layout */
+    .page { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+
+    /* Hero */
+    .hero { margin-bottom: 3rem; }
+    .breadcrumb { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--text); }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 0.75rem; }
+    .hero h1 .bills { color: var(--blue); }
+    .hero-sub { color: var(--muted); font-size: 1rem; max-width: 560px; }
+    .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 1.25rem; }
+    .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+    .badge-blue   { background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(59,130,246,0.2); }
+    .badge-green  { background: var(--green-dim); color: #22c55e; border: 1px solid rgba(22,163,74,0.2); }
+    .badge-amber  { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(245,158,11,0.2); }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+    /* Sections */
+    .section { margin-bottom: 2.5rem; }
+    .section-title {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 1rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text); }
+
+    /* Spec table */
+    .spec-table { width: 100%; border-collapse: collapse; }
+    .spec-table tr { border-bottom: 1px solid var(--border); }
+    .spec-table tr:last-child { border-bottom: none; }
+    .spec-table td { padding: 0.6rem 0; vertical-align: top; font-size: 0.875rem; }
+    .spec-table td:first-child { color: var(--muted); width: 46%; padding-right: 1rem; }
+    .spec-table td:last-child { color: var(--text); font-weight: 500; }
+
+    /* Feature list */
+    .feature-list { list-style: none; display: grid; gap: 0.5rem; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.875rem; }
+    .feature-list li::before { content: ''; width: 16px; height: 16px; min-width: 16px; margin-top: 2px;
+      background: var(--green-dim); border-radius: 50%;
+      border: 1.5px solid rgba(22,163,74,0.4);
+      display: inline-block; }
+    .feature-list.two-col { grid-template-columns: 1fr 1fr; }
+
+    /* Not available */
+    .not-available {
+      background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.2);
+      border-radius: 12px; padding: 1.25rem 1.5rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .not-available-icon { font-size: 1.25rem; line-height: 1; }
+    .not-available-text h4 { font-size: 0.9rem; font-weight: 700; color: var(--amber); margin-bottom: 0.25rem; }
+    .not-available-text p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* Security highlight */
+    .security-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .security-item {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 10px; padding: 1rem 1.25rem;
+    }
+    .security-item h4 { font-size: 0.8rem; font-weight: 700; color: var(--blue); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .security-item p { font-size: 0.825rem; color: var(--muted); line-height: 1.5; }
+
+    /* Companion */
+    .companion-card {
+      background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(22,163,74,0.06));
+      border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 1.25rem;
+    }
+    .companion-card .companion-text h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .companion-card .companion-text p { font-size: 0.85rem; color: var(--muted); }
+    .companion-card a { margin-left: auto; white-space: nowrap; text-decoration: none;
+      padding: 0.5rem 1.1rem; background: var(--blue-dim); color: var(--blue);
+      border: 1px solid rgba(59,130,246,0.25); border-radius: 8px;
+      font-size: 0.825rem; font-weight: 600; transition: background .15s; }
+    .companion-card a:hover { background: rgba(59,130,246,0.2); }
+
+    /* Contact */
+    .contact-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.5rem; display: flex; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .contact-item h4 { font-size: 0.75rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; }
+    .contact-item p { font-size: 0.875rem; font-weight: 500; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border); padding: 2rem;
+      text-align: center; color: var(--muted); font-size: 0.8rem;
+    }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 600px) {
+      .security-grid { grid-template-columns: 1fr; }
+      .feature-list.two-col { grid-template-columns: 1fr; }
+      .companion-card { flex-direction: column; }
+      .companion-card a { margin-left: 0; }
+      .hero h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><span class="pip">Pip</span><span class="s">s</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/pip-bills.html" class="active">Pip Bills</a></li>
+    <li><a href="https://simple.pipsai.app" target="_blank">Pip Simple</a></li>
+    <li><a href="terms.html">Terms</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="breadcrumb"><a href="/">pipsai.app</a> / Pip Bills</div>
+    <h1>Pip <span class="bills">Bills</span></h1>
+    <p class="hero-sub">Software voor Nederlandse zzp'ers en kleine ondernemers — factuurverwerking, BTW-administratie en aangifte omzetbelasting via Digipoort (SBR).</p>
+    <div class="badge-row">
+      <span class="badge badge-blue"><span class="badge-dot"></span> SBR / Digipoort</span>
+      <span class="badge badge-green"><span class="badge-dot"></span> NT20 — XBRL valide</span>
+      <span class="badge badge-amber"><span class="badge-dot"></span> Automatisch inzenden: in aanvraag</span>
+    </div>
+  </div>
+
+  <!-- Softwareleverancier -->
+  <div class="section">
+    <div class="section-title">Softwareleverancier</div>
+    <div class="card">
+      <table class="spec-table">
+        <tr><td>Naam leverancier</td><td>Ferrier Software</td></tr>
+        <tr><td>Productnaam</td><td>Pip Bills</td></tr>
+        <tr><td>Versie</td><td>0.1 (beta)</td></tr>
+        <tr><td>Platform</td><td>Electron desktop — Windows &amp; macOS</td></tr>
+        <tr><td>Website</td><td>pipsai.app/pip-bills</td></tr>
+        <tr><td>Contactpersoon</td><td>Mars Ferrier</td></tr>
+        <tr><td>Aansluit Suite registratie</td><td>In behandeling</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- SBR/Digipoort specificaties -->
+  <div class="section">
+    <div class="section-title">SBR / Digipoort Technische Specificaties</div>
+    <div class="card">
+      <h3>Aangifte Omzetbelasting</h3>
+      <table class="spec-table">
+        <tr><td>Berichtsoort</td><td>Omzetbelasting (BTW-aangifte)</td></tr>
+        <tr><td>Nederlandse Taxonomie</td><td>NT20 — versie 20251210.a</td></tr>
+        <tr><td>Entrypoint</td><td>bd-rpt-ob-aangifte-2026.xsd</td></tr>
+        <tr><td>Namespace</td><td>bd-data (prefix <code>bd-i</code>)</td></tr>
+        <tr><td>XBRL-validatie</td><td>Gevalideerd via Aansluit Suite — Filing/FRIS valide (25 april 2026)</td></tr>
+        <tr><td>Protocol</td><td>Digipoort WUS 2.0</td></tr>
+        <tr><td>SOAP versie</td><td>SOAP 1.1</td></tr>
+        <tr><td>Aanleverservice versie</td><td>1.2</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>PKIoverheid Certificaat</h3>
+      <table class="spec-table">
+        <tr><td>Certificaathouder</td><td>Ferrier Software</td></tr>
+        <tr><td>Certificaattype</td><td>PKIoverheid Private SBR</td></tr>
+        <tr><td>Uitgever</td><td>Digidentity</td></tr>
+        <tr><td>CA-keten</td><td>KPN PKIoverheid Private Services CA G1 → Staat der Nederlanden Private Services CA G1 → Private Root CA G1</td></tr>
+        <tr><td>Geldig van / tot</td><td>25 april 2026 — 25 april 2027</td></tr>
+        <tr><td>WS-Security signing</td><td>RSA-SHA256 + Exclusive C14N (XML Signature)</td></tr>
+        <tr><td>Transportbeveiliging</td><td>mTLS — PKIoverheid CA chain verificatie</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Beveiliging & Privacy -->
+  <div class="section">
+    <div class="section-title">Beveiliging &amp; Privacy</div>
+    <div class="security-grid">
+      <div class="security-item">
+        <h4>Lokale opslag</h4>
+        <p>Alle financiële gegevens worden uitsluitend lokaal opgeslagen in een versleutelde SQLite-database op het apparaat van de gebruiker. Geen cloud-opslag, geen externe servers.</p>
+      </div>
+      <div class="security-item">
+        <h4>Geen datadeling</h4>
+        <p>Boekhoudgegevens worden nooit gedeeld met derden. De enige externe verbinding is de beveiligde SOAP-verbinding met Digipoort voor het inzenden van de aangifte.</p>
+      </div>
+      <div class="security-item">
+        <h4>Certificaatwachtwoord</h4>
+        <p>Het PKIoverheid certificaatwachtwoord wordt opgeslagen via het OS-level safeStorage (Windows DPAPI / macOS Keychain). Nooit in plaintext op schijf.</p>
+      </div>
+      <div class="security-item">
+        <h4>Bevestiging vereist</h4>
+        <p>De gebruiker moet expliciet bevestigen (checkbox) vóór indiening. Tijdstempel en bevestiging worden gelogd in een audittrail in de lokale database.</p>
+      </div>
+      <div class="security-item">
+        <h4>WS-Security signing</h4>
+        <p>Elk SOAP-bericht wordt ondertekend met RSA-SHA256 en Exclusive C14N. De integriteit van het bericht is cryptografisch gewaarborgd.</p>
+      </div>
+      <div class="security-item">
+        <h4>Verantwoordelijkheid</h4>
+        <p>De gebruiker blijft te allen tijde verantwoordelijk voor de juistheid van de aangifte. Pip Bills is aansprakelijk voor technische verzendfouten, niet voor onjuiste data.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Functionaliteit -->
+  <div class="section">
+    <div class="section-title">Beschikbare functionaliteit</div>
+    <div class="card">
+      <ul class="feature-list two-col">
+        <li>Factuurimport — PDF, foto (PNG/JPG)</li>
+        <li>AI-extractie van factuurgegevens</li>
+        <li>BTW-berekening per kwartaal (21%, 9%, 0%)</li>
+        <li>Aangifte omzetbelasting opstellen in XBRL (NT20)</li>
+        <li>Officieel BTW-aangifteformulier rubrieken 1a–5e</li>
+        <li>Bank CSV import (ING, ABN AMRO, Rabobank, Bunq)</li>
+        <li>Bankafschrift reconciliatie</li>
+        <li>Factuurbouwer met EPC QR-code</li>
+        <li>Multi-bedrijf ondersteuning</li>
+        <li>Versioned aangifte-snapshots</li>
+        <li>Auditlog van alle wijzigingen</li>
+        <li>100% lokale data — geen abonnement vereist</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Nog niet beschikbaar -->
+  <div class="section">
+    <div class="section-title">Status automatisch inzenden</div>
+    <div class="not-available">
+      <div class="not-available-icon">&#9888;</div>
+      <div class="not-available-text">
+        <h4>Automatisch inzenden via Digipoort — nog niet actief</h4>
+        <p>
+          De technische implementatie (XBRL, WS-Security, Digipoort WUS 2.0) is gereed en gevalideerd.
+          Het automatisch inzenden is bewust nog niet geactiveerd — hiervoor is toestemming van de Belastingdienst vereist
+          en loopt de Aansluit Suite registratieprocedure. Zodra de toestemming is verleend wordt deze functie
+          beschikbaar gesteld aan gebruikers.
+        </p>
+        <p style="margin-top: 0.5rem;">
+          Gebruikers kunnen de XBRL-aangifte nu al genereren en zelf inzenden via
+          <a href="https://mijn.belastingdienst.nl" target="_blank" rel="noopener" style="color: var(--blue);">mijn.belastingdienst.nl</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pip Simple -->
+  <div class="section">
+    <div class="section-title">Aanvullende tools</div>
+    <div class="companion-card">
+      <div class="companion-text">
+        <h4>Pip Simple</h4>
+        <p>Gratis online calculator voor BTW-berekeningen, uurtarieven en andere zakelijke berekeningen voor zzp'ers. Geen account, geen opslag — direct bruikbaar in de browser.</p>
+      </div>
+      <a href="https://simple.pipsai.app" target="_blank" rel="noopener">Pip Simple &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Contactgegevens -->
+  <div class="section">
+    <div class="section-title">Contact</div>
+    <div class="contact-card">
+      <div class="contact-item">
+        <h4>Organisatie</h4>
+        <p>Ferrier Software</p>
+      </div>
+      <div class="contact-item">
+        <h4>Website</h4>
+        <p><a href="https://pipsai.app" style="color: var(--blue);">pipsai.app</a></p>
+      </div>
+      <div class="contact-item">
+        <h4>GitHub</h4>
+        <p><a href="https://github.com/Pips-AI/Pip-bills" target="_blank" rel="noopener" style="color: var(--blue);">Pips-AI/Pip-bills</a></p>
+      </div>
+      <div class="contact-item">
+        <h4>Aansluit Suite</h4>
+        <p>Registratie in behandeling</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Ferrier Software &nbsp;&middot;&nbsp;
+    <a href="/">pipsai.app</a> &nbsp;&middot;&nbsp;
+    <a href="privacy.html">Privacy</a> &nbsp;&middot;&nbsp;
+    <a href="terms.html">Terms</a> &nbsp;&middot;&nbsp;
+    <a href="disclaimer.html">Disclaimer</a>
+  </p>
+</footer>
+
+</body>
+</html>
